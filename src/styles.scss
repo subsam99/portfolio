@@ -4,5 +4,12 @@
 
 body,
 html {
-    height: 100dvh;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    body,
+    html {
+        height: 100dvh;
+    }
 }
