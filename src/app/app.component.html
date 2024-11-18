@@ -1,11 +1,11 @@
-<div class="flex flex-col w-full h-full justify-center items-center p-6">
-  <span class="font-bold text-lg text-center mb-4">{{ 'Very much a work in progress, so stay tuned ;)' }}</span>
-
-  <button
-    class="flex h-12 px-4 py-2 justify-center items-center bg-blue-500 rounded-xl hover:bg-blue-700 transition-colors duration-200 ease-in-out"
-    title="click it"
-    (click)="onClick()"
-  >
-    <span class="font-bold text-lg tracking-wide text-white uppercase">Subscribe</span>
-  </button>
+<div class="flex flex-col sm:w-dvh md:w-full sm:h-dvh md:h-full bg-neutral-100">
+  <app-header/>
+  
+  <div class="page flex-1 w-full h-full">
+    <div class="flex max-w-6xl mx-auto">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  
+  <app-footer/>
 </div>
