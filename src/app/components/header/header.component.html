@@ -1,0 +1,25 @@
+<div class="flex max-w-6xl mx-auto h-24">
+    <div class="flex items-center">
+        <a routerLink="/">
+            <img class="w-16 h-16" src="logo.png" alt="logo">
+        </a>
+    </div>
+    
+    <nav class="nav flex-1">
+        <a routerLink="/about" routerLinkActive="selected">About Me</a>
+        <a routerLink="/experience" routerLinkActive="selected">Experience</a>
+        <a routerLink="/showcase" routerLinkActive="selected">Skills Showcase</a>
+        <a routerLink="/contact" routerLinkActive="selected">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+        <a target="_blank" [href]="ghLink">
+            <img class="w-6 h-6" src="icons/github.svg" alt="github">
+        </a>
+        <a target="_blank" [href]="inLink">
+            <img class="w-6 h-6" src="icons/linkedin.svg" alt="in">
+        </a>
+        
+        
+    </div>
+</div>

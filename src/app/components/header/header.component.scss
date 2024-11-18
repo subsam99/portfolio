@@ -1,0 +1,24 @@
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        display: inline-flex;
+        height: 100%;
+        align-items: center;
+
+        padding: 12px 36px;
+        text-transform: uppercase;
+
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+            color: rgb(48, 71, 94, 0.8);
+        }
+
+        &.selected {
+            color: rgb(48, 71, 94);
+        }
+    }
+}
