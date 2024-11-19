@@ -9,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   repoLink: string = 'https://github.com/subsam99/portfolio'
+  iconLink: string = 'https://www.flaticon.com/uicons'
 }
