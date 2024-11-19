@@ -1,25 +1,63 @@
-<div class="flex max-w-6xl mx-auto h-24">
-    <div class="flex items-center">
-        <a routerLink="/">
-            <img class="w-16 h-16" src="logo.png" alt="logo">
-        </a>
+<div class="flex max-w-6xl mx-auto h-24 bg-neutral-100">
+    <div class="hidden md:flex flex-1">
+        <div class="flex items-center">
+            <a routerLink="/">
+                <img class="-ml-1 w-16 h-16" src="logo.png" alt="logo">
+            </a>
+        </div>    
+
+        <ng-container *ngTemplateOutlet="navs" />
     </div>
-    
+
+    <div class="flex flex-1 flex-col md:hidden">
+        <div class="flex flex-col w-full px-4">
+            <div class="flex w-full h-24 items-start">
+                <div class="flex h-full items-center">
+                    <a routerLink="/">
+                        <img class="-ml-1 w-16 h-16" src="logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="flex h-full flex-1 justify-end items-center">
+                    <div class="icon-box" (click)="toggleMenu()">
+                        <img
+                            [src]="menuOpen ? 'icons/cross.svg' : 'icons/hamburger.svg'"
+                            [class.-rotate-90]="menuOpen"
+                            class="w-4 h-4 duration-200 ease-in-out"
+                            alt="menu"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="w-full transition-all duration-200 ease-in-out"
+            [ngClass]="menuOpen ? 'visible' : 'invisible'"
+        >
+            <div class="overlay" [ngClass]="menuOpen ? 'opacity-40' : 'opacity-0'" (click)="toggleMenu()"></div>
+            <div
+                class="mobile-menu overflow-hidden px-4"
+                [ngClass]="menuOpen ? 'max-h-72' : 'max-h-0'"
+            >
+                <hr>
+                <ng-container *ngTemplateOutlet="navs" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #navs>
     <nav class="nav flex-1">
         <a routerLink="/about" routerLinkActive="selected">About Me</a>
         <a routerLink="/experience" routerLinkActive="selected">Experience</a>
         <a routerLink="/showcase" routerLinkActive="selected">Skills Showcase</a>
         <a routerLink="/contact" routerLinkActive="selected">Contact</a>
     </nav>
-
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-3 pt-4 pb-6 md:pt-0 md:pb-0 ml-1 md:ml-0">
         <a target="_blank" [href]="ghLink">
             <img class="w-6 h-6" src="icons/github.svg" alt="github">
         </a>
         <a target="_blank" [href]="inLink">
             <img class="w-6 h-6" src="icons/linkedin.svg" alt="in">
         </a>
-        
-        
     </div>
-</div>
+</ng-template>
